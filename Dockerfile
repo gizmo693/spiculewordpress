@@ -7,7 +7,7 @@ RUN a2enmod rewrite expires
 RUN service apache2 start
 
 VOLUME /var/www/html
-
+COPY 000-default.conf /etc/apache/sites-enabled/000-default.conf
 EXPOSE 80
 
 CMD service apache2 start && tail -f /dev/null
